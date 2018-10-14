@@ -49,7 +49,8 @@ public class PersonViewHolder extends RecyclerView.ViewHolder{
         Glide.with(context).load(person.getImageUrl()).into(ivPhoto);
     }
 
-    private void onClickPerson(@NonNull PersonItem person, @NonNull PersonListAdapter.OnPersonClickListener listener) {
+    private void onClickPerson(@NonNull PersonItem person,
+                               @NonNull PersonListAdapter.OnPersonClickListener listener) {
         listener.onPersonClick(person);
     }
 

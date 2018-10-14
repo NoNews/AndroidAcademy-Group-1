@@ -3,6 +3,7 @@ package ru.alexbykov.cleancodesample.persons.personlist.adapter;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +46,6 @@ public class PersonListAdapter extends RecyclerView.Adapter<PersonViewHolder> {
     }
 
     public interface OnPersonClickListener {
-        void onPersonClick(PersonItem person);
+        void onPersonClick(@NonNull PersonItem person);
     }
 }

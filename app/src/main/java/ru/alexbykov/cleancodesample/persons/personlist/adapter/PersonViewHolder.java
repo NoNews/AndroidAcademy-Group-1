@@ -18,11 +18,11 @@ import ru.alexbykov.cleancodesample.persons.personlist.PersonItem;
 public class PersonViewHolder extends RecyclerView.ViewHolder{
 
     private static final int LAYOUT = R.layout.item_person;
-
-    private TextView firstName;
-    private TextView secondName;
-    private ImageView image;
     private Context context;
+
+    private TextView tvFirstName;
+    private TextView tvSecondName;
+    private ImageView ivPhoto;
     private View view;
 
     private PersonViewHolder(@NonNull View itemView) {
@@ -44,9 +44,9 @@ public class PersonViewHolder extends RecyclerView.ViewHolder{
     }
 
     private void setupUi(PersonItem person){
-        firstName.setText(person.getName());
-        secondName.setText(person.getSecondName());
-        Glide.with(context).load(person.getImageUrl()).into(image);
+        tvFirstName.setText(person.getName());
+        tvSecondName.setText(person.getSecondName());
+        Glide.with(context).load(person.getImageUrl()).into(ivPhoto);
     }
 
     private void onClickPerson(@NonNull PersonItem person, @NonNull PersonListAdapter.OnPersonClickListener listener) {
@@ -59,9 +59,9 @@ public class PersonViewHolder extends RecyclerView.ViewHolder{
     }
 
     private void findViews() {
-        firstName = itemView.findViewById(R.id.personFirstName);
-        secondName = itemView.findViewById(R.id.personSecondName);
-        image = itemView.findViewById(R.id.personImage);
+        tvFirstName = itemView.findViewById(R.id.tv_first_name);
+        tvSecondName = itemView.findViewById(R.id.tv_second_name);
+        ivPhoto = itemView.findViewById(R.id.iv_photo);
         view = itemView;
         context = itemView.getContext();
     }

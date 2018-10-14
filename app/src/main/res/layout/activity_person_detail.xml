@@ -7,7 +7,7 @@
     tools:context=".persons.persondetail.PersonDetailActivity">
 
     <ImageView
-        android:id="@+id/detail_imagess"
+        android:id="@+id/iv_photo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         tools:src="@tools:sample/avatars" />
@@ -20,14 +20,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/detail_firstName"
+            android:id="@+id/tv_first_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             tools:text="@tools:sample/first_names" />
 
         <TextView
-            android:id="@+id/detail_secondName"
+            android:id="@+id/tv_second_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -37,7 +37,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/detail_info"
+        android:id="@+id/tv_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

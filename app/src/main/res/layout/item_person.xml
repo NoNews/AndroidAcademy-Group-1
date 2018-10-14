@@ -7,7 +7,7 @@
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/personImage"
+        android:id="@+id/iv_photo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         tools:src="@tools:sample/avatars" />
@@ -20,14 +20,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/personFirstName"
+            android:id="@+id/tv_first_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             tools:text="@tools:sample/first_names" />
 
         <TextView
-            android:id="@+id/personSecondName"
+            android:id="@+id/tv_second_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"

@@ -15,12 +15,15 @@ import ru.alexbykov.cleancodesample.persons.personlist.PersonItem;
 
 public class PersonDetailActivity extends AppCompatActivity {
 
+
+    private static final int LAYOUT = R.layout.activity_person_detail;
+
     private final static String EXTRA_PERSON = "EXTRA_PERSON";
 
-    private TextView firstName;
-    private TextView secondName;
-    private TextView info;
-    private ImageView image;
+    private TextView tvFirstName;
+    private TextView tvSecondName;
+    private TextView tvInfo;
+    private ImageView ivPhoto;
 
     public static void start(@NonNull Context context, @NonNull PersonItem person) {
         Intent starter = new Intent(context, PersonDetailActivity.class);
@@ -31,19 +34,32 @@ public class PersonDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_person_detail);
-        firstName = findViewById(R.id.detail_firstName);
-        secondName = findViewById(R.id.detail_secondName);
-        info = findViewById(R.id.detail_info);
-        image = findViewById(R.id.detail_imagess);
+        setContentView(LAYOUT);
+        findViews();
+        setupData();
+    }
 
-        Bundle bundle = getIntent().getExtras();
-        if(bundle != null){
-            PersonItem person = (PersonItem) bundle.getSerializable(EXTRA_PERSON);
-            firstName.setText(person.getName());
-            secondName.setText(person.getSecondName());
-            info.setText(person.getInfo());
-            Glide.with(this).load(person.getImageUrl()).into(image);
+    private void setupData() {
+        final Bundle bundle = getIntent().getExtras();
+        if (bundle == null) {
+            return;
         }
+
+        PersonItem person = (PersonItem) bundle.getSerializable(EXTRA_PERSON);
+        if (person == null) {
+            return;
+        }
+
+        tvFirstName.setText(person.getName());
+        tvSecondName.setText(person.getSecondName());
+        tvInfo.setText(person.getInfo());
+        Glide.with(this).load(person.getImageUrl()).into(ivPhoto);
+    }
+
+    private void findViews() {
+        tvFirstName = findViewById(R.id.tv_first_name);
+        tvSecondName = findViewById(R.id.tv_second_name);
+        tvInfo = findViewById(R.id.tv_info);
+        ivPhoto = findViewById(R.id.iv_photo);
     }
 }
